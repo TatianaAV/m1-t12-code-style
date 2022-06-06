@@ -5,13 +5,16 @@ public class DepositCalculator {
         double value = amount * Math.pow((1 + rateYear / 12), 12 * period);
         return roundingValue(value, 2);
     }
+    
     double calculateSimplePercent(double amount, double rateYear, int period) {
         return roundingValue(amount + amount * rateYear * period, 2);
     }
+    
     double roundingValue(double value, int places) {
         double scale = Math.pow(10, places);
         return Math.round(value * scale) / scale;
     }
+    
     void depositManager() {
         int period;
         int action;
